@@ -25,7 +25,7 @@ def on_error(original_connection, error):
     websocket_connection.on_failure(error)
 
 
-def on_close(original_connection):
+def on_close(original_connection, code, msg):
     websocket_connection = websocket_connection_handler[original_connection]
     websocket_connection.on_close()
 
