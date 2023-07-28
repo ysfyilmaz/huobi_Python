@@ -31,6 +31,13 @@ def price_depth_bbo_channel(symbol):
     return json.dumps(channel)
 
 
+def market_ticker_channel(symbol):
+    channel = dict()
+    channel["sub"] = "market." + symbol + ".ticker"
+    channel["id"] = str(get_current_timestamp())
+    return json.dumps(channel)
+
+
 def orders_update_channel(symbol):
     channel = dict()
     channel["action"] = "sub"

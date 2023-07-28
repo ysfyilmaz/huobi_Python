@@ -202,6 +202,18 @@ class MarketClient(object):
         from huobi.service.market.sub_pricedepth_bbo import SubPriceDepthBboService
         return SubPriceDepthBboService(params).subscribe(callback, error_handler, **self.__kwargs)
 
+    def sub_market_ticker(self, symbols: 'str', callback, error_handler=None):
+        symbol_list = symbols.split(",")
+        check_symbol_list(symbol_list)
+        check_should_not_none(callback, "callback")
+
+        params = {
+            "symbol_list": symbol_list,
+        }
+
+        from huobi.service.market.sub_pricedepth_bbo import SubPriceDepthBboService
+        return SubPriceDepthBboService(params).subscribe(callback, error_handler, **self.__kwargs)
+
     def req_pricedepth(self, symbols: 'str', depth_step: 'str', callback, error_handler=None):
         """
         Subscribe price depth event. If the price depth is updated, server will send the data to client and onReceive in callback will be called.

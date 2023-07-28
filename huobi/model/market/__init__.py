@@ -7,6 +7,8 @@ from huobi.model.market.pricedepth_event import PriceDepthEvent
 from huobi.model.market.pricedepth_req import PriceDepthReq
 from huobi.model.market.pricedepth_bbo import PriceDepthBbo
 from huobi.model.market.pricedepth_bbo_event import PriceDepthBboEvent
+from huobi.model.market.market_ticker import MarketTicker
+from huobi.model.market.market_ticker_event import MarketTicker
 from huobi.model.market.market_detail_merged import MarketDetailMerged
 from huobi.model.market.market_detail import MarketDetail
 from huobi.model.market.market_detail_event import MarketDetailEvent
